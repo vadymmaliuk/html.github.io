@@ -1,0 +1,212 @@
+header{
+    text-align: center;
+    color:  rgb(28, 28, 151);
+    margin-top: 20px
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.picture{
+    display: flex;
+    width: 55%;
+    height: 50%;
+}
+
+.filter{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 10px;
+}
+label{
+    border: 1px;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+}
+input{
+    display: none;
+}
+.filter{
+    text-align: center;
+    box-sizing: border-box;
+    list-style-type: none;
+    padding: 10px;
+}
+.filter{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: right;
+    grid-gap: 10px;
+}
+
+
+
+main{
+    background-color: white;;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+
+}
+
+
+
+.container{
+    order: -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 10px;
+    font-size: 20px;
+}
+.filter > label{
+
+    background:#cacafc;
+    color: rgb(28, 28, 151);
+    width: 60%;
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+
+#pirog:checked ~ .container > :not(.pirog),
+#tistechko:checked ~ .container > :not(.tistechko),
+#rulet:checked ~ .container > :not(.rulet),
+#tort:checked ~ .container > :not(.tort),
+#sirnuk:checked ~ .container > :not(.sirnuk)
+{
+    display: none;
+}
+.filter > label:hover{
+    background-color: greenyellow;
+}
+
+#tort:checked ~ .filter [for="tort"],
+#pirog:checked ~ .filter [for="pirog"],
+#tistechko:checked ~ .filter [for="tistechko"],
+#rulet:checked ~ .filter [for="rulet"],
+#sirnuk:checked ~ .filter [for="sirnuk"],
+#-filter:checked ~ .filter [for="-filter"] {
+    background-color: greenyellow;
+}
+.smakota:hover{
+    transform: scale(1.05);
+    z-index: 1;
+}
+.smakota{
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid black;
+    
+}
+
+.desert{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+}
+
+.calories{
+    position: relative;
+    padding-left: 5px;
+    color: rgb(85, 255, 99);
+}
+
+
+
+footer{
+    
+    color: rgb(0, 0, 0);
+}
+.tag{
+    display: inline;
+    float: right;
+}
+.cont{
+    display: inline;
+}
+footer > a{
+    color: blue;
+}
+
+
+
+
+
+@media (max-width: 800px){
+
+    main{
+        grid-template-columns: 100%;
+    }
+    .filter{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .container{
+        order: 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .desert{
+        display: flex;
+        flex-flow: column;
+    }
+    .img{
+        width: 100%;
+    }
+    .tag{
+        float: right;
+    }
+    .cont{
+        display: block;
+    }
+
+    .tort .desert > p::before,
+    .tistechko .desert > p::before,
+    .pirog .desert > p::before,
+    .rulet .desert > p::before,
+    .sirnuk .desert > p::before{
+        display: inline;
+    }
+
+   
+    footer > .tag{
+        display: inline;
+        
+    }
+}
+
+
+
+
+
+@media (max-width: 500px){
+    .filter{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .contacts{
+        grid-template-columns: 6fr;
+        
+    }
+    .tag{
+        display: block;
+        float:left;
+    }
+    .cont{
+        display: block;
+    }
+    a{
+        color: blue;
+        display:block;
+    }
+}
